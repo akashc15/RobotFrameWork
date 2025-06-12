@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-12T10:00:10.401665" rpa="false" schemaversion="5">
+<suite id="s1" name="LabSessionExcel" source="C:\Users\akcha\PycharmProjects\RobotframeWork1\DataDrivenTesting\LabSessionExcel.robot">
+<kw name="Launch App" owner="LabSessionDDTKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:12.002649" level="INFO">Opening browser 'Edge' to base url 'https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-12T10:00:12.002272" elapsed="4.859908"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-12T10:00:16.862594" elapsed="0.077667"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:12.001354" elapsed="4.939427"/>
+</kw>
+<test id="s1-t1" name="Fill form with user data" line="13">
+<kw name="StudentLogin">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:18.989956" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:16.948327" elapsed="2.042623"/>
+</kw>
+<kw name="SET NAME" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:19.005606" level="INFO">Typing text 'Akash' into text field '//input[@id='name']'.</msg>
+<arg>//input[@id='name']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:18.999809" elapsed="0.486777"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-06-12T10:00:18.993424" elapsed="0.493797"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:21.488977" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:19.487829" elapsed="2.001404"/>
+</kw>
+<kw name="SET Email" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:21.491494" level="INFO">Typing text 'akash@test.com' into text field '//input[@id='email']'.</msg>
+<arg>//input[@id='email']</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:21.490814" elapsed="0.283406"/>
+</kw>
+<arg>${Email}</arg>
+<status status="PASS" start="2025-06-12T10:00:21.489689" elapsed="0.284727"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:23.775424" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:21.774624" elapsed="2.001292"/>
+</kw>
+<kw name="Choose Gender" owner="LabSessionDDTKeywords">
+<if>
+<branch type="IF" condition="'${gender}' == 'MALE'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:23.779820" level="INFO">Clicking element '//input[@id='gender']'.</msg>
+<arg>//input[@id='gender']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:23.779235" elapsed="0.253219"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:23.778429" elapsed="0.254292"/>
+</branch>
+<branch type="ELSE IF" condition="'${gender}' == 'FEMALE'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//div[3]//div[1]//div[1]//div[2]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:24.033347" elapsed="0.000105"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:24.032901" elapsed="0.000678"/>
+</branch>
+<branch type="ELSE IF" condition="'${gender}' == 'OTHERS'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//div[3]//div[1]//div[1]//div[3]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:24.033946" elapsed="0.000240"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:24.033690" elapsed="0.000661"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Invalid gender: ${gender}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:24.034792" elapsed="0.000075"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:24.034471" elapsed="0.000513"/>
+</branch>
+<status status="PASS" start="2025-06-12T10:00:23.778312" elapsed="0.256762"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-12T10:00:23.777157" elapsed="0.258143"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:26.036660" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:24.035558" elapsed="2.002844"/>
+</kw>
+<kw name="SET MobileNumber" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:26.046553" level="INFO">Typing text '9876543210' into text field '//input[@id='mobile']'.</msg>
+<arg>//input[@id='mobile']</arg>
+<arg>${number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:26.044592" elapsed="0.408630"/>
+</kw>
+<arg>${number}</arg>
+<status status="PASS" start="2025-06-12T10:00:26.039962" elapsed="0.413645"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:27.455568" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:26.454058" elapsed="1.002970"/>
+</kw>
+<kw name="SET DOB" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:27.462213" level="INFO">Typing text '1999-05-10' into text field '//input[@id='dob']'.</msg>
+<arg>//input[@id='dob']</arg>
+<arg>${dob}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:27.460614" elapsed="0.411750"/>
+</kw>
+<arg>${dob}</arg>
+<status status="PASS" start="2025-06-12T10:00:27.458828" elapsed="0.413959"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:28.875086" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:27.873689" elapsed="1.001806"/>
+</kw>
+<kw name="SET Subjects" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:28.877478" level="INFO">Typing text 'Maths' into text field '//input[@id='subjects']'.</msg>
+<arg>//input[@id='subjects']</arg>
+<arg>${sub}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:28.876931" elapsed="0.233900"/>
+</kw>
+<arg>${sub}</arg>
+<status status="PASS" start="2025-06-12T10:00:28.876064" elapsed="0.235198"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:30.112819" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:29.111809" elapsed="1.001425"/>
+</kw>
+<kw name="Choose Hobbies" owner="LabSessionDDTKeywords">
+<if>
+<branch type="IF" condition="'${hobby}' == 'SPORTS'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//input[@id='hobbies']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:30.117431" elapsed="0.000138"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:30.115255" elapsed="0.002470"/>
+</branch>
+<branch type="ELSE IF" condition="'${hobby}' == 'READING'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//div[7]//div[1]//div[1]//div[2]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:30.119222" elapsed="0.000105"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:30.117837" elapsed="0.001621"/>
+</branch>
+<branch type="ELSE IF" condition="'${hobby}' == 'MUSIC'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:30.120527" level="INFO">Clicking element '//div[7]//div[1]//div[1]//div[3]//input[1]'.</msg>
+<arg>//div[7]//div[1]//div[1]//div[3]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:30.120039" elapsed="0.266638"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:30.119558" elapsed="0.267389"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Invalid hobby: ${hobby}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:30.387735" elapsed="0.000113"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:30.387085" elapsed="0.000883"/>
+</branch>
+<status status="PASS" start="2025-06-12T10:00:30.115167" elapsed="0.272890"/>
+</if>
+<arg>${hobby}</arg>
+<status status="PASS" start="2025-06-12T10:00:30.114245" elapsed="0.274290"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:31.389699" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:30.389014" elapsed="1.001005"/>
+</kw>
+<kw name="Upload Picture" owner="LabSessionDDTKeywords">
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:31.393322" level="INFO">Sending C:\Users\akcha\Downloads\sampleFile(6).jpeg to browser.</msg>
+<arg>//input[@id='picture']</arg>
+<arg>${path}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:31.392546" elapsed="0.084322"/>
+</kw>
+<arg>${path}</arg>
+<status status="PASS" start="2025-06-12T10:00:31.390580" elapsed="0.086757"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:32.478714" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:31.477769" elapsed="1.001363"/>
+</kw>
+<kw name="Choose CurrentAddress" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:32.482007" level="INFO">Typing text 'Bangalore City' into text field '//textarea[@id='picture']'.</msg>
+<arg>//textarea[@id='picture']</arg>
+<arg>${current}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:32.481149" elapsed="0.262008"/>
+</kw>
+<arg>${current}</arg>
+<status status="PASS" start="2025-06-12T10:00:32.479840" elapsed="0.263734"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:33.745233" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:32.744036" elapsed="1.001721"/>
+</kw>
+<kw name="Click state" owner="LabSessionDDTKeywords">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:33.749456" level="INFO">Selecting options from selection list '//select[@id='state']' by label NCR.</msg>
+<arg>//select[@id='state']</arg>
+<arg>${state}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-06-12T10:00:33.747916" elapsed="0.459793"/>
+</kw>
+<arg>${state}</arg>
+<status status="PASS" start="2025-06-12T10:00:33.746411" elapsed="0.462074"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:35.210328" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:34.209163" elapsed="1.001513"/>
+</kw>
+<kw name="Click city" owner="LabSessionDDTKeywords">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:35.213125" level="INFO">Selecting options from selection list '//select[@id='city']' by label Lucknow.</msg>
+<arg>//select[@id='city']</arg>
+<arg>${city}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-06-12T10:00:35.212551" elapsed="0.304051"/>
+</kw>
+<arg>${city}</arg>
+<status status="PASS" start="2025-06-12T10:00:35.211611" elapsed="0.305394"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:36.519023" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:35.517402" elapsed="1.001929"/>
+</kw>
+<kw name="Click Login" owner="LabSessionDDTKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:36.521115" level="INFO">Clicking element '//input[@value='Login']'.</msg>
+<arg>//input[@value='Login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:36.520667" elapsed="0.198451"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:36.519863" elapsed="0.199594"/>
+</kw>
+<arg>username=Akash</arg>
+<arg>Email=akash@test.com</arg>
+<arg>gender=MALE</arg>
+<arg>number=9876543210</arg>
+<arg>dob=1999-05-10</arg>
+<arg>sub=Maths</arg>
+<arg>hobby=MUSIC</arg>
+<arg>path=C:/Users/akcha/Downloads/sampleFile(6).jpeg</arg>
+<arg>current=Bangalore City</arg>
+<arg>state=NCR</arg>
+<arg>city=Lucknow</arg>
+<status status="PASS" start="2025-06-12T10:00:16.944977" elapsed="19.774663"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:16.941129" elapsed="19.779792"/>
+</test>
+<test id="s1-t2" name="Fill form with user data" line="13">
+<kw name="StudentLogin">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:38.733091" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:36.731898" elapsed="2.001641"/>
+</kw>
+<kw name="SET NAME" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:38.735956" level="INFO">Typing text 'Priya' into text field '//input[@id='name']'.</msg>
+<arg>//input[@id='name']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:38.735308" elapsed="0.370682"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-06-12T10:00:38.734244" elapsed="0.372066"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:41.107511" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:39.106652" elapsed="2.001807"/>
+</kw>
+<kw name="SET Email" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:41.113750" level="INFO">Typing text 'priya@example.com' into text field '//input[@id='email']'.</msg>
+<arg>//input[@id='email']</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:41.112404" elapsed="0.550919"/>
+</kw>
+<arg>${Email}</arg>
+<status status="PASS" start="2025-06-12T10:00:41.109743" elapsed="0.554046"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:43.666190" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:41.664219" elapsed="2.002367"/>
+</kw>
+<kw name="Choose Gender" owner="LabSessionDDTKeywords">
+<if>
+<branch type="IF" condition="'${gender}' == 'MALE'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//input[@id='gender']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:43.668926" elapsed="0.000083"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:43.668320" elapsed="0.001199"/>
+</branch>
+<branch type="ELSE IF" condition="'${gender}' == 'FEMALE'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:43.671669" level="INFO">Clicking element '//div[3]//div[1]//div[1]//div[2]//input[1]'.</msg>
+<arg>//div[3]//div[1]//div[1]//div[2]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:43.670196" elapsed="0.283251"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:43.669635" elapsed="0.284061"/>
+</branch>
+<branch type="ELSE IF" condition="'${gender}' == 'OTHERS'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//div[3]//div[1]//div[1]//div[3]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:43.954222" elapsed="0.000080"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:43.953826" elapsed="0.000576"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Invalid gender: ${gender}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:43.954782" elapsed="0.000100"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:43.954483" elapsed="0.000525"/>
+</branch>
+<status status="PASS" start="2025-06-12T10:00:43.668237" elapsed="0.286859"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-12T10:00:43.667396" elapsed="0.287883"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:45.957976" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:43.955558" elapsed="2.002864"/>
+</kw>
+<kw name="SET MobileNumber" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:45.960912" level="INFO">Typing text '9123456780' into text field '//input[@id='mobile']'.</msg>
+<arg>//input[@id='mobile']</arg>
+<arg>${number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:45.960293" elapsed="0.393508"/>
+</kw>
+<arg>${number}</arg>
+<status status="PASS" start="2025-06-12T10:00:45.959205" elapsed="0.394944"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:47.355253" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:46.354553" elapsed="1.001096"/>
+</kw>
+<kw name="SET DOB" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:47.358517" level="INFO">Typing text '1998-03-22' into text field '//input[@id='dob']'.</msg>
+<arg>//input[@id='dob']</arg>
+<arg>${dob}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:47.358044" elapsed="0.290861"/>
+</kw>
+<arg>${dob}</arg>
+<status status="PASS" start="2025-06-12T10:00:47.356517" elapsed="0.292769"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:48.652498" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:47.649681" elapsed="1.003305"/>
+</kw>
+<kw name="SET Subjects" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:48.655705" level="INFO">Typing text 'Science' into text field '//input[@id='subjects']'.</msg>
+<arg>//input[@id='subjects']</arg>
+<arg>${sub}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:48.655016" elapsed="0.330709"/>
+</kw>
+<arg>${sub}</arg>
+<status status="PASS" start="2025-06-12T10:00:48.653686" elapsed="0.332568"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:49.988688" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:48.987273" elapsed="1.001827"/>
+</kw>
+<kw name="Choose Hobbies" owner="LabSessionDDTKeywords">
+<if>
+<branch type="IF" condition="'${hobby}' == 'SPORTS'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//input[@id='hobbies']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:49.993020" elapsed="0.000122"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:49.990863" elapsed="0.002464"/>
+</branch>
+<branch type="ELSE IF" condition="'${hobby}' == 'READING'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:49.994501" level="INFO">Clicking element '//div[7]//div[1]//div[1]//div[2]//input[1]'.</msg>
+<arg>//div[7]//div[1]//div[1]//div[2]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:49.993982" elapsed="0.238126"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:49.993445" elapsed="0.238915"/>
+</branch>
+<branch type="ELSE IF" condition="'${hobby}' == 'MUSIC'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//div[7]//div[1]//div[1]//div[3]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:50.232929" elapsed="0.000134"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:50.232495" elapsed="0.000693"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Invalid hobby: ${hobby}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-12T10:00:50.233586" elapsed="0.000082"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T10:00:50.233286" elapsed="0.000500"/>
+</branch>
+<status status="PASS" start="2025-06-12T10:00:49.990790" elapsed="0.243093"/>
+</if>
+<arg>${hobby}</arg>
+<status status="PASS" start="2025-06-12T10:00:49.990000" elapsed="0.244068"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:51.235231" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:50.234323" elapsed="1.001157"/>
+</kw>
+<kw name="Upload Picture" owner="LabSessionDDTKeywords">
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:51.236871" level="INFO">Sending C:\Users\akcha\Downloads\sampleFile(6).jpeg to browser.</msg>
+<arg>//input[@id='picture']</arg>
+<arg>${path}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:51.236429" elapsed="0.120843"/>
+</kw>
+<arg>${path}</arg>
+<status status="PASS" start="2025-06-12T10:00:51.235864" elapsed="0.121794"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:52.358912" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:51.358069" elapsed="1.001292"/>
+</kw>
+<kw name="Choose CurrentAddress" owner="LabSessionDDTKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:52.362611" level="INFO">Typing text 'Chennai Town' into text field '//textarea[@id='picture']'.</msg>
+<arg>//textarea[@id='picture']</arg>
+<arg>${current}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:52.361869" elapsed="0.396811"/>
+</kw>
+<arg>${current}</arg>
+<status status="PASS" start="2025-06-12T10:00:52.360273" elapsed="0.398922"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:53.760409" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:52.759537" elapsed="1.001254"/>
+</kw>
+<kw name="Click state" owner="LabSessionDDTKeywords">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:53.765013" level="INFO">Selecting options from selection list '//select[@id='state']' by label Haryana.</msg>
+<arg>//select[@id='state']</arg>
+<arg>${state}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-06-12T10:00:53.762966" elapsed="0.266901"/>
+</kw>
+<arg>${state}</arg>
+<status status="PASS" start="2025-06-12T10:00:53.761813" elapsed="0.268640"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:55.032127" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:54.031187" elapsed="1.001354"/>
+</kw>
+<kw name="Click city" owner="LabSessionDDTKeywords">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:55.035797" level="INFO">Selecting options from selection list '//select[@id='city']' by label Meerut.</msg>
+<arg>//select[@id='city']</arg>
+<arg>${city}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-06-12T10:00:55.035014" elapsed="0.347784"/>
+</kw>
+<arg>${city}</arg>
+<status status="PASS" start="2025-06-12T10:00:55.033241" elapsed="0.350141"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T10:00:56.390057" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T10:00:55.383896" elapsed="1.006974"/>
+</kw>
+<kw name="Click Login" owner="LabSessionDDTKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T10:00:56.399478" level="INFO">Clicking element '//input[@value='Login']'.</msg>
+<arg>//input[@value='Login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T10:00:56.393561" elapsed="0.368931"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:56.391435" elapsed="0.371429"/>
+</kw>
+<arg>username=Priya</arg>
+<arg>Email=priya@example.com</arg>
+<arg>gender=FEMALE</arg>
+<arg>number=9123456780</arg>
+<arg>dob=1998-03-22</arg>
+<arg>sub=Science</arg>
+<arg>hobby=READING</arg>
+<arg>path=C:/Users/akcha/Downloads/sampleFile(6).jpeg</arg>
+<arg>current=Chennai Town</arg>
+<arg>state=Haryana</arg>
+<arg>city=Meerut</arg>
+<status status="PASS" start="2025-06-12T10:00:36.729516" elapsed="20.033520"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:36.722905" elapsed="20.041293"/>
+</test>
+<kw name="Close App" owner="LabSessionDDTKeywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-12T10:00:56.768643" elapsed="2.831830"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:56.768061" elapsed="2.832792"/>
+</kw>
+<status status="PASS" start="2025-06-12T10:00:10.405938" elapsed="49.195039"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="LabSessionExcel" id="s1" pass="2" fail="0" skip="0">LabSessionExcel</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-06-12T10:00:36.723202" level="WARN">Multiple tests with name 'Fill form with user data' executed in suite 'LabSessionExcel'.</msg>
+</errors>
+</robot>

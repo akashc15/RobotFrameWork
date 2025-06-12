@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-12T14:12:59.925829" rpa="false" schemaversion="5">
+<suite id="s1" name="Authenticator" source="C:\Users\akcha\PycharmProjects\RobotframeWork1\LabSessionApi\Authenticator.robot">
+<test id="s1-t1" name="Authenticate" line="12">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-12T14:13:00.399635" level="INFO">Creating Session using : alias=base_url, url=https://videogamedb.uk:443, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>base_url</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-12T14:13:00.399236" elapsed="0.001009"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-12T14:13:00.401796" level="INFO">${body} = {'username': 'admin', 'password': 'admin'}</msg>
+<var>${body}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-12T14:13:00.400962" elapsed="0.000888"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-12T14:13:00.402724" level="INFO">${header} = {'Content-type': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Content-type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-12T14:13:00.402431" elapsed="0.000333"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-06-12T14:13:00.788058" level="INFO">PUT Request : url=https://videogamedb.uk:443/api/authenticate 
+ path_url=/api/authenticate 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-type': 'application/json', 'Content-Length': '42'} 
+ body=b'{"username": "admin", "password": "admin"}' 
+ </msg>
+<msg time="2025-06-12T14:13:00.788287" level="INFO">PUT Response : url=https://videogamedb.uk:443/api/authenticate 
+ status=403, reason=Forbidden 
+ headers={'Connection': 'close', 'Content-Type': 'text/html', 'Cache-Control': 'no-cache', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "frame-ancestors 'self'", 'Content-Length': '32806'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+ &lt;meta charset="UTF-8"&gt;
+ &lt;meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE"&gt;
+ &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+ &lt;style type="text/css"&gt;
+ body {
+ height: 100%;
+ font-family: Helvetica, Arial, sans-serif;
+ color: #6a6a6a;
+ margin: 0;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ input[type=date], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], select, textarea {
+ color: #262626;
+ vertical-align: baseline;
+ margin: .2em;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #a9a9a9;
+ background-color: #fff;
+ box-sizing: border-box;
+ padding: 2px .5em;
+ appearance: none;
+ border-radius: 0;
+ }
+ input:focus {
+ border-color: #646464;
+ box-shadow: 0 0 1px 0 #a2a2a2;
+ outline: 0;
+ }
+ button {
+ padding: .5em 1em;
+ border: 1px solid;
+ border-radius: 3px;
+ min-width: 6em;
+ font-weight: 400;
+ font-size: .8em;
+ cursor: pointer;
+ }
+ button.primary {
+ color: #fff;
+ background-color: rgb(47, 113, 178);
+ border-color: rgb(34, 103, 173);
+ }
+ .message-container {
+ height: 500px;
+ width: 600px;
+ padding: 0;
+ margin: 10px;
+ }
+ .logo {
+ background: url('data:image/png;base64, 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... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-06-12T14:13:00.789956" level="INFO">C:\Users\akcha\PycharmProjects\RobotframeWork1\.venv\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'videogamedb.uk'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-12T14:13:00.790756" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://videogamedb.uk:443/api/authenticate</msg>
+<var>${response}</var>
+<arg>base_url</arg>
+<arg>${Servicename}</arg>
+<arg>json=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-06-12T14:13:00.403146" elapsed="0.394439">HTTPError: 403 Client Error: Forbidden for url: https://videogamedb.uk:443/api/authenticate</status>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2025-06-12T14:13:00.798835" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<var>${json}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="NOT RUN" start="2025-06-12T14:13:00.798731" elapsed="0.002371"/>
+</kw>
+<kw name="Get Value From Json">
+<var>${token}</var>
+<arg>${json}</arg>
+<arg>token</arg>
+<status status="NOT RUN" start="2025-06-12T14:13:00.802303" elapsed="0.000096"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${token}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-12T14:13:00.803035" elapsed="0.000144"/>
+</kw>
+<status status="FAIL" start="2025-06-12T14:13:00.396481" elapsed="0.407805">HTTPError: 403 Client Error: Forbidden for url: https://videogamedb.uk:443/api/authenticate</status>
+</test>
+<status status="FAIL" start="2025-06-12T14:12:59.929703" elapsed="0.878188"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Authenticator" id="s1" pass="0" fail="1" skip="0">Authenticator</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-06-12T14:13:00.393659" level="ERROR">Error in file 'C:\Users\akcha\PycharmProjects\RobotframeWork1\LabSessionApi\Authenticator.robot' on line 3: Importing library 'JsonLibrary' failed: ModuleNotFoundError: No module named 'JsonLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\akcha\PycharmProjects\RobotframeWork1\.venv\Scripts\robot.exe
+  C:\Users\akcha\PycharmProjects\RobotframeWork1\.venv\Scripts\python313.zip
+  C:\Users\akcha\AppData\Local\Programs\Python\Python313\DLLs
+  C:\Users\akcha\AppData\Local\Programs\Python\Python313\Lib
+  C:\Users\akcha\AppData\Local\Programs\Python\Python313
+  C:\Users\akcha\PycharmProjects\RobotframeWork1\.venv
+  C:\Users\akcha\PycharmProjects\RobotframeWork1\.venv\Lib\site-packages</msg>
+<msg time="2025-06-12T14:13:00.798835" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+</errors>
+</robot>
