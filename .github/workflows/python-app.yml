@@ -74,7 +74,7 @@ jobs:
 
       run: |
 
-        robot -v BROWSER:chrome --variable HEADLESS:True tests/
+        robot -v BROWSER:chrome --variable HEADLESS:True Test/
 
          mkdir -p results
 
