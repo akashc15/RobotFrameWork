@@ -17,10 +17,7 @@ Verify radio button
         Call Method    ${chrome options}    add_argument    --disable-dev-shm-usage
         Create WebDriver    Chrome    options=${chrome options}
         Go To      https://www.amazon.in/
-        Maximize Browser Window
-        Mouse Over    xpath://span[normalize-space()='Prime']
-
-        Wait Until Element Is Visible    xpath://img[@id='multiasins-img-link']
-        Click Element    xpath://img[@id='multiasins-img-link']
+        
+        
         Sleep    2
         Close Browser
